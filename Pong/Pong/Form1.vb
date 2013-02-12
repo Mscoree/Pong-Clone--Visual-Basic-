@@ -3,7 +3,7 @@ Public Class Form1
     Dim graphical, bbg As Graphics
     Dim sourceRect, destinationRect As Rectangle
     Dim bitmap, backBuffer As Bitmap
-    Dim PaddleX As Integer = 1, PaddleY As Integer = 1, Paddle2X As Integer = 720, Paddle2Y As Integer = 420, r1 As Integer, score As Integer = 0, score2 As Integer = 0, BallX As Integer = 330, BallY As Integer = 200, ballHeight As Integer = 30, ballWidth As Integer = 30, verticalMomentum, HorizMomentum As Integer
+    Dim PaddleX As Integer = 1, PaddleY As Integer = 1, Paddle2X As Integer = 720, Paddle2Y As Integer = 420, r1 As Integer, score As Integer = 0, score2 As Integer = 0, BallX As Integer = 330, BallY As Integer = 200, ballHeight As Integer = 30, ballWidth As Integer = 30, verticalMomentum, HorizMomentum, enemyMomentum As Integer
     '#Region "Hide Cursor"
     '    Private Sub pongMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
     '        Windows.Forms.Cursor.Hide()
@@ -33,7 +33,7 @@ Public Class Form1
         sourceRect = New Rectangle(0, 50, ballWidth, ballHeight)
         graphical.DrawImage(bitmap, BallX, BallY, sourceRect, GraphicsUnit.Pixel)
         Ball()
-
+        enemy()
         graphical = Graphics.FromImage(backBuffer)
         bbg = Me.CreateGraphics
         bbg.DrawImage(backBuffer, 0, 0, Me.Width, Me.Height)
@@ -57,32 +57,30 @@ Public Class Form1
         DrawAll()
     End Sub
     Private Sub Ball()
-        BallY = BallY + verticalMomentum
+        BallY = BallY + verticalMomentum - 1
         BallX = BallX + HorizMomentum
         If BallY = 0 Then verticalMomentum = -verticalMomentum
         If BallY = 490 Then verticalMomentum = -verticalMomentum
         If (BallX + ballWidth + 1) = 61 And BallY > PaddleY + 20 Then
             HorizMomentum = -HorizMomentum
         End If
+    End Sub
+    Private Sub enemy()
+        If verticalMomentum > 1 Then
+            If Paddle2Y > 1 Then Paddle2Y = Paddle2Y + 5
+        Else
+            Paddle2Y = Paddle2Y - 5
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        End If
+        If Paddle2Y >= 420 Then Paddle2Y = Paddle2Y - 100
+        'If verticalMomentum < 1 Then
+        '    If Paddle2Y < 420 Then Paddle2Y = Paddle2Y - 5
+        'Else
+        '    Paddle2Y = Paddle2Y 
+        'End If
 
     End Sub
+
     Private Sub Form1_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
         DrawAll()
     End Sub
