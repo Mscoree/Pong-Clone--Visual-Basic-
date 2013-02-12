@@ -1,0 +1,10 @@
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\bin\Debug\Pong.exe.config
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\bin\Debug\Pong.exe
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\bin\Debug\Pong.pdb
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\bin\Debug\Pong.xml
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\obj\Debug\Pong.Form1.resources
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\obj\Debug\Pong.Resources.resources
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\obj\Debug\Pong.vbproj.GenerateResource.Cache
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\obj\Debug\Pong.exe
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\obj\Debug\Pong.xml
+c:\users\jonathan\documents\visual studio 2012\Projects\Pong\Pong\obj\Debug\Pong.pdb
